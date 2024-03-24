@@ -1,0 +1,7 @@
+C:\Users\MARJAUZA\Documents\KULIAH\TUGAS\Semester 4\Praktikum KPL\tpmodul6_1302220009\tpmodul6_1302220009\obj\Debug\tpmodul6_1302220009.csproj.AssemblyReference.cache
+C:\Users\MARJAUZA\Documents\KULIAH\TUGAS\Semester 4\Praktikum KPL\tpmodul6_1302220009\tpmodul6_1302220009\obj\Debug\tpmodul6_1302220009.csproj.CoreCompileInputs.cache
+C:\Users\MARJAUZA\Documents\KULIAH\TUGAS\Semester 4\Praktikum KPL\tpmodul6_1302220009\tpmodul6_1302220009\bin\Debug\tpmodul6_1302220009.exe.config
+C:\Users\MARJAUZA\Documents\KULIAH\TUGAS\Semester 4\Praktikum KPL\tpmodul6_1302220009\tpmodul6_1302220009\bin\Debug\tpmodul6_1302220009.exe
+C:\Users\MARJAUZA\Documents\KULIAH\TUGAS\Semester 4\Praktikum KPL\tpmodul6_1302220009\tpmodul6_1302220009\bin\Debug\tpmodul6_1302220009.pdb
+C:\Users\MARJAUZA\Documents\KULIAH\TUGAS\Semester 4\Praktikum KPL\tpmodul6_1302220009\tpmodul6_1302220009\obj\Debug\tpmodul6_1302220009.exe
+C:\Users\MARJAUZA\Documents\KULIAH\TUGAS\Semester 4\Praktikum KPL\tpmodul6_1302220009\tpmodul6_1302220009\obj\Debug\tpmodul6_1302220009.pdb
