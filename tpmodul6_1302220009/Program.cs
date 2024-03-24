@@ -1,43 +1,91 @@
 ﻿using System;
 
-namespace tpmodul6_1302220009
+class Program
 {
-    class Program
+    public class SayaTubeVideo
     {
-        public class SayaTubeVideo
+        private int id;
+        private string title;
+        private int playCount;
+
+        public SayaTubeVideo(string title)
         {
-            private int id;
-            string title;
-            private int playCount;
+            if (title == null)
+                throw new ArgumentNullException(nameof(title), "Judul video tidak boleh null.");
+            if (title.Length > 100)
+                throw new ArgumentException("Judul video tidak boleh lebih dari 100 karakter.", nameof(title));
 
-            public SayaTubeVideo(string title)
+            var rand = new Random();
+            this.id = rand.Next(9999);
+            this.title = title;
+            this.playCount = 0;
+        }
+
+        public void IncreasePlayCount(int jmlh)
+        {
+            if (jmlh < 0 || jmlh > 10000000)
+                throw new ArgumentOutOfRangeException(nameof(jmlh),
+                    "Input penambahan play count harus antara 0 hingga 10,000,000.");
+
+            try
             {
-                var rand = new Random();
-                this.id = rand.Next(9999);
-                this.title = title;
-                this.playCount = 0;
+                checked
+                {
+                    playCount += jmlh;
+                }
             }
-
-            public void IncreasePlayCount(int jmlh)
+            catch (OverflowException ex)
             {
-                playCount += jmlh;
-            }
-
-            public void PrintVideoDetails()
-            {
-                Console.WriteLine("ID: " + id);
-                Console.WriteLine("Title: " + title);
-                Console.WriteLine("Play count: " + playCount);
+                Console.WriteLine("Error: " + ex.Message);
             }
         }
 
-
-        static void Main(string[] args)
+        public void PrintVideoDetails()
         {
-            SayaTubeVideo vid1 = new SayaTubeVideo("Tutorial Design By Contract – Marjauza Naswansyah");
-            vid1.IncreasePlayCount(1000);
-            vid1.PrintVideoDetails();
-            Console.ReadLine();
+            Console.WriteLine("ID: " + id);
+            Console.WriteLine("Title: " + title);
+            Console.WriteLine("Play count: " + playCount);
         }
+    }
+
+    static void Main(string[] args)
+    {
+        try
+        {
+            SayaTubeVideo vid1 = new SayaTubeVideo(null);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+
+        try
+        {
+            SayaTubeVideo vid2 = new SayaTubeVideo("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+
+        try
+        {
+            SayaTubeVideo vid4 = new SayaTubeVideo("Tutorial Design By Contract – Marjauza Naswansyah");
+            vid4.IncreasePlayCount(100000000);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+
+        SayaTubeVideo vid3 = new SayaTubeVideo("Tutorial Design By Contract – Marjauza Naswansyah");
+
+        for (int i = 0; i < 10000000; i++)
+        {
+            vid3.IncreasePlayCount(100);
+        }
+
+        vid3.PrintVideoDetails();
+        Console.ReadLine();
     }
 }
